@@ -8,10 +8,13 @@ export default async function HomePage() {
     data: { user },
   } = await supabase.auth.getUser()
 
+  const dashboardHref = user ? '/dashboard' : '/auth'
+  const dashboardText = user ? 'Dashboard' : 'Login / Register'
+
   return (
     <main className="home-page">
       <header className="top-bar">
-        <div className="top-left-socials">
+        <div className="top-left-socials" aria-label="Social media links">
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-circle">
             𝕏
           </a>
@@ -25,58 +28,28 @@ export default async function HomePage() {
           </a>
         </div>
 
-        {/* Desktop buttons stay here */}
-        <nav className="top-right-nav">
-          <Link href="/" className="nav-btn">
-            Home
-          </Link>
-
-          <Link href="/about" className="nav-btn">
-            About Us
-          </Link>
-
-          {user ? (
-            <Link href="/dashboard" className="nav-btn">
-              Dashboard
-            </Link>
-          ) : (
-            <Link href="/auth" className="nav-btn">
-              Login / Register
-            </Link>
-          )}
+        <nav className="top-right-nav" aria-label="Desktop navigation">
+          <Link href="/" className="nav-btn">Home</Link>
+          <Link href="/about" className="nav-btn">About Us</Link>
+          <Link href={dashboardHref} className="nav-btn">{dashboardText}</Link>
         </nav>
 
-        {/* Mobile dropdown only */}
         <details className="mobile-menu">
           <summary aria-label="Open menu">☰</summary>
 
           <div className="mobile-menu-panel">
-            <Link href="/" className="mobile-menu-link">
-              Home
-            </Link>
-
-            <Link href="/about" className="mobile-menu-link">
-              About Us
-            </Link>
-
-            {user ? (
-              <Link href="/dashboard" className="mobile-menu-link">
-                Dashboard
-              </Link>
-            ) : (
-              <Link href="/auth" className="mobile-menu-link">
-                Login / Register
-              </Link>
-            )}
+            <Link href="/" className="mobile-menu-link">Home</Link>
+            <Link href="/about" className="mobile-menu-link">About Us</Link>
+            <Link href={dashboardHref} className="mobile-menu-link">{dashboardText}</Link>
           </div>
         </details>
       </header>
 
       <section className="hero-section">
-        <picture>
+        <picture className="hero-picture">
           <source
             media="(max-width: 768px)"
-            srcSet="/images/Invite Me to the Wedding AI Mobile.svg"
+            srcSet="/images/Invite%20Me%20to%20the%20Wedding%20AI%20Mobile%20v2.svg"
           />
 
           <img
@@ -87,12 +60,6 @@ export default async function HomePage() {
         </picture>
 
         <div className="hero-center-content">
-          <img
-            src="/images/A Little Spark Never Hurts.svg"
-            alt="A Little Spark Never Hurts"
-            className="spark-tagline"
-          />
-
           <Link href="/about" className="hero-main-btn">
             Start the Spark
           </Link>
