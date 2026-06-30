@@ -1895,11 +1895,11 @@ label {
   }
 
   .home-page .hero-image {
-    top: 9%;
+    top: 8%;
     left: 50%;
     width: 108%;
     height: 60%;
-    transform: translateX(-50%) scale(1.28);
+    transform: translateX(-50%) scale(1.36) scaleX(1.10);
     transform-origin: top center;
     object-fit: contain;
     object-position: top center;
@@ -1912,8 +1912,8 @@ label {
   }
 
   .home-page .hero-main-btn {
-    padding: 6px 18px;
-    font-size: 10px;
+    padding: 4px 15px;
+    font-size: 8px;
   }
 
   .home-page .top-left-socials {
