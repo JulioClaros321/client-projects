@@ -61,7 +61,7 @@ export default async function HomePage() {
 
         <div className="hero-center-content">
           <Link href="/about" className="hero-main-btn">
-            Start the Spark
+            v2
           </Link>
         </div>
       </section>
