@@ -48,6 +48,12 @@ export default function AboutPage() {
       </header>
 
       <section className="about-art-hero">
+        <img
+          src="/images/about page art.svg"
+          alt="Couple enjoying coffee"
+          className="about-main-art"
+        />
+
         <div className="about-title-panel">
           <img
             src="/images/about page art title.svg"
@@ -61,12 +67,6 @@ export default function AboutPage() {
             </a>
           </div>
         </div>
-
-        <img
-          src="/images/about page art.svg"
-          alt="Couple enjoying coffee"
-          className="about-main-art"
-        />
       </section>
 
       <section id="learn-more" className="about-learn-more">

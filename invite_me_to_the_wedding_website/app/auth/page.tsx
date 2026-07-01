@@ -119,7 +119,7 @@ export default function AuthPage() {
     }
 
     setLoading(false)
-    router.push('/dashboard')
+    router.push('/profile')
     router.refresh()
   }
 

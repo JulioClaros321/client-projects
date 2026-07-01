@@ -87,7 +87,11 @@ export default async function DashboardPage() {
       </div>
 
       <div className="dashboard-card">
-        <h1>Welcome {profile?.first_name || 'User'}</h1>
+        <h1>Hi {profile?.first_name || 'there'}!</h1>
+
+        <p className="dashboard-intro">
+          Your story starts here. Share who you are, what you value, and let us help you find your perfect match.
+        </p>
 
         <QuestionnaireForm
           userId={user.id}
