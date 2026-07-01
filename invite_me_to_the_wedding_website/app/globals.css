@@ -1832,10 +1832,10 @@ label {
 
   .home-page .hero-image {
     position: absolute;
-    top: 7%;
+    top: 3%;
     left: 50%;
-    width: 120%;
-    height: 72%;
+    width: 138%;
+    height: 78%;
     max-width: none;
     transform: translateX(-50%) scaleX(1.08);
     transform-origin: top center;
